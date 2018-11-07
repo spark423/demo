@@ -12,6 +12,10 @@ app.get('/22_8', function(req, res) {
     res.sendFile(path.join(__dirname + '/22_8/22_8.html'));
 })
 
+app.post('/make-comment', function(req,res) {
+	res.json({text: req.body.text, by: req.body.name}).status(200)
+})
+
 ///page={num}/s={snoozed}/p={pinned}
 app.get('/threads', function(req, res) {
     res.json({threads: [
